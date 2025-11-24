@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface StudentRepository extends JpaRepository<StudentModel,Long>  { // kan ook CrudRepository<StudentModel, Integer> gebruiken
     // Om sql te definieren die moet worden uitgevoerd voor een s
 
-    @Query("SELECT s FROM StudentModel s WHERE s.email=?")
+    @Query("SELECT s FROM StudentModel s WHERE s.email=?1")
     // Hiermee schrijf je je eigen SQL/JPQL( je kan meerdere voorwaarden combineren
     Optional<StudentModel> findStudentModelByEmail(String email);
     // Als je Optional gebruikt, dan geef je een veiliger antwoord terug
